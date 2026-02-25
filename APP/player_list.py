@@ -59,6 +59,41 @@ class PlayerList:
             self.tail.next = new_player
             self.tail = new_player
 
+    def delete_head(self):
+        """
+        Delete and return the player at the head of the list.
+        """
+
+        if self.is_empty():
+            return None
+
+        #move the node to the next
+        deleted_node = self.head
+        self.head = self.head.next
+
+        #if there is a new head, the enlace behind is broken
+        if self.head is not None:
+            self.head.prev = None
+        return deleted_node
+
+    def delete_tail(self):
+        """
+        Delete and return the player at the tail of the list.
+        """
+
+        if self.is_empty():
+            return None
+
+        #move the node to the previous
+        deleted_node = self.tail
+        self.tail = self.tail.prev
+
+        #if there is a new
+        if self.tail is not None:
+            self.tail.next = None
+        return deleted_node
+
+
 
 
 

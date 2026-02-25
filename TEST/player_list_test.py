@@ -48,3 +48,27 @@ class PlayerListTest(unittest.TestCase):
         players.insert_head(player2)
         self.assertEqual(players.tail.player, player1)
 
+    def test_delete_head(self):
+        players = PlayerList()
+        player1 = Player("1001", "Jose")
+        player2 = Player("1002", "Luis")
+        players.insert_head(player1)
+        players.insert_head(player2)
+
+        delete_node = players.delete_head()
+
+        self.assertEqual(delete_node.player, player2)
+        self.assertEqual(players.head.player, player1)
+
+    def test_delete_tail(self):
+        players = PlayerList()
+        player1 = Player("1001", "Jose")
+        player2 = Player("1002", "Luis")
+        players.insert_tail(player1)
+        players.insert_tail(player2)
+
+        delete_node = players.delete_tail()
+
+        self.assertEqual(delete_node.player, player2)
+        self.assertEqual(players.tail.player, player1)
+
