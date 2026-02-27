@@ -94,3 +94,6 @@ class PlayerListTest(unittest.TestCase):
 
         self.assertEqual(deleted_key.player, player1)
         self.assertEqual(players.head.player, player2)
+
+if __name__ == '__main__':
+    unittest.main()
