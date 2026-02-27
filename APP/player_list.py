@@ -93,6 +93,31 @@ class PlayerList:
             self.tail.next = None
         return deleted_node
 
+    def delete_key(self, key):
+        """
+        Deletes the first node whose player.uid matches the given key.
+        """
+        current = self.head
+        previous = self.head
+
+        if current is None:
+            return None
+
+        while current.player.uid != key:
+            if current.next is None:
+                return None
+            else:
+                previous = current
+                current = current.next
+        # delete head
+        if current == self.head:
+            self.head = self.head.next
+            self.head.prev = None
+        # delete next or tail
+        else:
+            previous.next = current.next
+            current.next.prev = previous
+        return current
 
 
 
