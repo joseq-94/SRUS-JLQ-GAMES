@@ -119,6 +119,27 @@ class PlayerList:
             current.next.prev = previous
         return current
 
+    def display(self, forward = True):
+        """
+        Display the player list.
+        """
+        if self.head is None:
+            print("Player list is empty")
+            return
+
+        print("list head to tail")
+        if forward:
+            current = self.head
+            while current is not None:
+                print("--List: Head to Tail--")
+                print(f"{current.player.name} ({current.player.uid})")
+                current = current.next
+        else:
+            current = self.tail
+            while current is not None:
+                print("--List: Tail to Head--")
+                print(f"{current.player.name} ({current.player.uid})")
+                current = current.prev
 
 
 
