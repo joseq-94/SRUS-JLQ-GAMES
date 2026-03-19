@@ -32,13 +32,25 @@ class HashTable:
         Insert a new player into the hash table using separate chaining
         :param key:
         :param name:
-        :return:
         """
         index = self.__hash(key)
         player = Player(key, name)
 
+        #insert data at the end of the player list
         self.__hash_table[index].insert_tail(player)
         self.__size += 1
 
-
+    def get(self, key):
+        """
+        retrieve a player from the hash table using separate chaining
+        :param key:
+        """
+        index= self.__hash(key)
+        current = self.__hash_table[index].head
+        # traverse the linked list, start in the first node until the key is found
+        while current is not None:
+            if current.player.uid == key:
+                return current.player
+            current = current.next
+        return None
 
