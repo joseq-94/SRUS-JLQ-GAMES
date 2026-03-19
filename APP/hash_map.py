@@ -1,3 +1,4 @@
+import player_list
 from player import Player
 from player_list import PlayerList
 from math import sqrt
@@ -25,4 +26,19 @@ class HashTable:
             int: hash index
         """
         return hash(key) % self.__size
+
+    def put(self, key, name):
+        """
+        Insert a new player into the hash table using separate chaining
+        :param key:
+        :param name:
+        :return:
+        """
+        index = self.__hash(key)
+        player = Player(key, name)
+
+        self.__hash_table[index].insert_tail(player)
+        self.__size += 1
+
+
 
