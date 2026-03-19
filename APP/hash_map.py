@@ -54,3 +54,20 @@ class HashTable:
             current = current.next
         return None
 
+    def remove(self, key):
+        """
+        remove a player from the hash table using separate chaining
+        :param key:
+        """
+        index=self.__hash(key)
+        # determinate which playlist the key belong, and call delete_key
+        deleted=self.__hash_table[index].delete_key(key)
+        #if the node was deleted successfully so the size decrease
+        if deleted is not None:
+            self.__size -= 1
+            return deleted.player
+        return None
+
+
+
+
