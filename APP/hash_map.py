@@ -33,7 +33,7 @@ class HashTable:
         :param key:
         :param name:
         """
-        index = self.__hash(key)
+        index = Player.hash(key) % self.__table_size
         player = Player(key, name)
 
         #insert data at the end of the player list
@@ -45,7 +45,7 @@ class HashTable:
         retrieve a player from the hash table using separate chaining
         :param key:
         """
-        index= self.__hash(key)
+        index= Player.hash(key) % self.__table_size
         current = self.__hash_table[index].head
         # traverse the linked list, start in the first node until the key is found
         while current is not None:
@@ -59,7 +59,7 @@ class HashTable:
         remove a player from the hash table using separate chaining
         :param key:
         """
-        index=self.__hash(key)
+        index= Player.hash(key) % self.__table_size
         # determinate which playlist the key belong, and call delete_key
         deleted=self.__hash_table[index].delete_key(key)
         #if the node was deleted successfully so the size decrease

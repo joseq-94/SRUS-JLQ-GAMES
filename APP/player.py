@@ -14,3 +14,19 @@ class Player:
 
     def __str__(self):
         return f"Player(uid='{self.__unique_id}', name='{self.__player_name}')"
+
+    @classmethod
+    def hash(cls, key: str):
+      """
+        return hash value for a player uid
+      """
+      total = 0
+      for char in key:
+          total += ord(char)
+      return total
+
+    def __hash__(self):
+        """
+        return hash value of this player
+        """
+        return Player.hash(self.uid)
