@@ -68,6 +68,26 @@ class HashTable:
             return deleted.player
         return None
 
+    def size(self):
+        """
+        Return the size of the hash table
+        :return:
+        """
+        return self.__size
 
+    def __str__(self):
+        """
+        save a string representation of every player in the hash table
+        :return:
+        """
+        data=""
+        #iterate through every playlist in the hash table
+        for i in range(self.__table_size):
+            current = self.__hash_table[i].head
+            #print the player in the player list
+            while current is not None:
+                data += f"[{i}]{current.player.name} ({current.player.uid})\n"
+                current = current.next
+        return data
 
 
