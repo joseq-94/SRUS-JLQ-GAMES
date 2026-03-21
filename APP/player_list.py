@@ -112,11 +112,13 @@ class PlayerList:
         # delete head
         if current == self.head:
             self.head = self.head.next
-            self.head.prev = None
+            if self.head is not None:
+                self.head.prev = None
         # delete next or tail
         else:
             previous.next = current.next
-            current.next.prev = previous
+            if current.next is not None:
+                current.next.prev = previous
         return current
 
     def display(self, forward = True):

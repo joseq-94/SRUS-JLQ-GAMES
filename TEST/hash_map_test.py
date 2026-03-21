@@ -17,3 +17,13 @@ class HashTableTest(unittest.TestCase):
         assert result.name == "Luis"
         assert result.uid == "L01"
 
+    def test_remove_player(self):
+        player_list = HashTable(10)
+
+        player_list.put("L01", "Luis")
+        player_list.put("J02", "Jose")
+        removed = player_list.remove("L01")
+
+        assert removed is not None
+        assert removed.name == "Luis"
+        assert player_list.get("L01") is None
