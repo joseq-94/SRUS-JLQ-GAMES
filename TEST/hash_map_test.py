@@ -27,3 +27,17 @@ class HashTableTest(unittest.TestCase):
         assert removed is not None
         assert removed.name == "Luis"
         assert player_list.get("L01") is None
+
+    def test_collision_handling(self):
+        player_list = HashTable(10)
+
+        player_list.put("L01", "Luis")
+        player_list.put("J02", "Jose")
+
+        h1 = player_list.get("L01")
+        h2 = player_list.get("J02")
+
+        assert h1 is not None
+        assert h2 is not None
+        assert h1.name == "Luis"
+        assert h2.name == "Jose"
