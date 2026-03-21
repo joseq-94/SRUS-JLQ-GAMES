@@ -82,12 +82,27 @@ class HashTable:
         """
         data=""
         #iterate through every playlist in the hash table
-        for i in range(self.__table_size):
-            current = self.__hash_table[i].head
+        for ind in range(self.__table_size):
+            current = self.__hash_table[ind].head
             #print the player in the player list
             while current is not None:
-                data += f"[{i}]{current.player.name} ({current.player.uid})\n"
+                data += f"[{ind}]{current.player.name} ({current.player.uid})\n"
                 current = current.next
         return data
+
+
+    def display(self):
+        """
+        print the hash table that is not empty
+        :return:
+        """
+        for ind in range(self.__table_size):
+            current = self.__hash_table[ind].head
+            if current is not None:
+                #print index of player list
+                print(f"player list: {ind}")
+                while current is not None:
+                    print(f"{current.player.name} ({current.player.uid})")
+                    current=current.next
 
 
