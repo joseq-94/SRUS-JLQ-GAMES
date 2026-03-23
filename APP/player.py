@@ -20,6 +20,7 @@ class Player:
       """
         return hash value for a player uid
       """
+      #It converts a character into its ASCII number
       total = 0
       for char in key:
           total += ord(char)

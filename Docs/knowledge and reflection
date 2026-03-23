@@ -73,11 +73,22 @@ def sha256_hash(key: str, size: int) -> int:
 
 1. All of the above functions are hash functions. Explain how so - what key properties do they all share?
 
-> Your answer here
+> all of the hash function take a key(UID) and transform it into an integer.
+> then, we use this hash value to generate a index within the hash table
+> this index is used to store the player in one player list.
 
 2. What are the advantages and disadvantages of each of the above hash functions? Evaluate in terms of uniformity, determinism, efficiency, collision resistance, sensitivity to input changes, and security[1](#Reference). You may need to do some reasearch to answer this question 😱
 
-> Your answer here
+> For the SSH and the Sum of ASCII functions, some qualities such as uniformity, collision
+resistance, sensitive and security are very poor or nonexistent. however, both functions are
+efficient and fully deterministic.
+
+>The pearson hash and the pyhon built-in hash perform much better in every area but its main
+weakness is security due to they are not designed to be cryptographically.
+
+>Finally, SHA256 hash function performs strongly in all areas, including security due to its
+cryptographic design and its only disadvantage is lower efficiency, since the hashing process is
+ more computationally.
 
 3. List the three most important attributes (arranged from most to least) in the context of a hash map? Justify your answer.
 
