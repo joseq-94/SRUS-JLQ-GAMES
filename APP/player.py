@@ -1,8 +1,12 @@
+from _ast import Raise
+
+
 class Player:
 
-    def __init__(self, unique_id: str, player_name: str):
+    def __init__(self, unique_id: str, player_name: str, score: int):
         self.__unique_id = unique_id
         self.__player_name = player_name
+        self.__score = score
 
     @property
     def uid(self):
@@ -12,8 +16,18 @@ class Player:
     def name(self):
         return self.__player_name
 
+    @property
+    def score(self):
+        return self.__score
+
+    @score.setter
+    def score(self, minvalue: int):
+        if minvalue < 0:
+            raise ValueError('Score cannot be negative')
+        self.__score = minvalue
+
     def __str__(self):
-        return f"Player(uid='{self.__unique_id}', name='{self.__player_name}')"
+        return f"Player(uid='{self.__unique_id}', name='{self.__player_name}', score={self.__score})"
 
     @classmethod
     def hash(cls, key: str):
