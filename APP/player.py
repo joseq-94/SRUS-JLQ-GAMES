@@ -36,6 +36,21 @@ class Player:
         return self.score == other.score
 
     @classmethod
+    def sort_players(cls, arr):
+        if len(arr) <= 1:
+            return arr
+        pivot = arr[0]
+        left = []
+        right = []
+        for x in arr[1:]:
+            if x > pivot:
+                left.append(x)
+            else:
+                right.append(x)
+        return cls.sort_players(left) + [pivot] + cls.sort_players(right)
+
+
+    @classmethod
     def hash(cls, key: str):
       """
         return hash value for a player uid
