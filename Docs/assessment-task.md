@@ -132,10 +132,21 @@ Commit your changes
 4.3.4. Task: Are we sorted yet?
 Rerun test_sort_players does the test pass? If not, include the output below:
 
-Your output here
+![img_3.png](img_3.png)
+
+
 4.3.4.1 Question: why did the equality comparison fail?
 Why did the test fail (note: if it doesn't fail, it means there is something you have already done before you were asked to do so - if that's the case, you need to figure out what that is!)?
-Answer here
+
+I call the method __eq__ because in the test i am using assertListEqual and the error is !=, 
+also I use this article:
+https://docs.python.org/3/reference/datamodel.html#object.__eq__
+
+
+    def __eq__(self, other):
+        return self.score == other.score
+
+![img_4.png](img_4.png)
 
 Add the necessary code to the Player class to ensure that the test_sort_players test passes.
 
