@@ -77,6 +77,7 @@ Note: If you have made other changes to the initializer of your player update th
 
 4.2. Task: Interpret unit tests
 What was the outcome of running the above unit test, copy paste the output for just this particular test below:
+![img_1.png](img_1.png)
 
 Copy the traceback you got when you ran the test here.
 4.3. Success criteria
