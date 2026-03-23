@@ -57,6 +57,7 @@ You can mark this task as complete when you have (your assessor will use a simil
  Raising ValueError if someone attempts to set a non-positive value
  Existing tests pass
  At least one (and ideally only one) commit showing the above changes
+
 4. Sorting players
 4.1. Task: Add unit tests for sorting players
 Add the following unit tests to the test_player.py file:
@@ -155,6 +156,7 @@ Add the necessary code to the Player class to ensure that the test_sort_players 
  Correct implementation of the magic method in the Player class
  test_sort_players passes when run against the submitted code
  At least one commit capturing the above changes
+
 5. Implement a custom sorting algorithm
 The senior developer on your team believes that a custom sorting algorithm would be more efficient than the built-in sorted function (you grit your teeth, sigh, and realize you need this job!).
 
@@ -178,10 +180,20 @@ def sort_quickly(arr):
         else:
             right.append(x)
     return sort_quickly(left) + [pivot] + sort_quickly(right)
+
 5.1. Question: complexity
 What is the expected time and space complexity of the above algorithm? You can answer using big O or in plain English but in both cases you MUST justify your answer.
+I got the answer in this article:
+https://www.geeksforgeeks.org/dsa/quick-sort-algorithm/
 
-Answer here
+Time Complexity:
+Best Case: (Ω(n log n)), Occurs when the pivot element divides the array into two equal halves.
+Average Case: (θ(n log n)), The pivot divide the array into two parts, but not necessarily equal
+Worst Case: (O(n²)), Occurs when the smallest or largest element is always chosen as the pivot
+
+Auxiliary Space:
+Worst-case scenario: O(n) due to unbalanced partitioning leading to a skewed recursion tree requiring a call stack of size O(n).
+Best-case scenario: O(log n) as a result of balanced partitioning leading to a balanced recursion tree with a call stack of size O(log n).
 
 5.2. Task: Implement the custom sorting algorithm
 5.2.1. Create a new method in the Player class
