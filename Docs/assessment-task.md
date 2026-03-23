@@ -90,7 +90,17 @@ The tests checks that calling sorted on a list of players will sort them by scor
 What is the only magic method that must be implemented in the player class for the sorted function to succeed?
 
 Hint: if you don't recall this from class, the error message you got when you ran the test will help you.
-Answer Here Yes, here - instead of this text!
+
+while looking for information in the sources class, I found this article that explain how to 
+use the magic methods:
+
+https://simone-carolini.medium.com/how-to-use-gt-magic-method-in-python-672c1a3f7859
+
+this explains how to use __gt__ (grater than) magic method to fix the error:
+TypeError: '>' not supported between instances of 'Person' and 'Person'
+
+in my case, the error is for the "<" operator, so I will use the 
+magic method __lt__ (less than) magic method instead
 
 4.3.2. Task: Implement the magic method in the Player class
 Add a test case to test_player to test the comparison operator you are about to add - ensure you do not test a dunder method directly!
