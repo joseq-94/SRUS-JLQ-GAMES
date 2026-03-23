@@ -186,12 +186,12 @@ What is the expected time and space complexity of the above algorithm? You can a
 I got the answer in this article:
 https://www.geeksforgeeks.org/dsa/quick-sort-algorithm/
 
-Time Complexity:
+Time Complexity: This function has the worst case because pick the first element
 Best Case: (Ω(n log n)), Occurs when the pivot element divides the array into two equal halves.
 Average Case: (θ(n log n)), The pivot divide the array into two parts, but not necessarily equal
 Worst Case: (O(n²)), Occurs when the smallest or largest element is always chosen as the pivot
 
-Auxiliary Space:
+Auxiliary Space: worst case
 Worst-case scenario: O(n) due to unbalanced partitioning leading to a skewed recursion tree requiring a call stack of size O(n).
 Best-case scenario: O(log n) as a result of balanced partitioning leading to a balanced recursion tree with a call stack of size O(log n).
 
@@ -201,10 +201,23 @@ Use the sample above (and its algorithm) as a starting point to implement a clas
 
 5.2.2. Create a test cases
 Add a separate test case to test_player.py to test your custom sorting algorithm
-
+![img_5.png](img_5.png)
 Include your code below:
 
-# YOUR CUSTOM Sorting here
+    @classmethod
+    def sort_players(cls, arr):
+        if len(arr) <= 1:
+            return arr
+        pivot = arr[0]
+        left = []
+        right = []
+        for x in arr[1:]:
+            if x > pivot:
+                left.append(x)
+            else:
+                right.append(x)
+        return cls.sort_players(left) + [pivot] + cls.sort_players(right)
+
 5.2.3. Success criteria
  Custom sorting algorithm implemented in the Player class as classmethod
  Custom sorting algorithm sorts in descending order
