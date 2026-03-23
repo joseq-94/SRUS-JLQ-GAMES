@@ -29,6 +29,9 @@ class Player:
     def __str__(self):
         return f"Player(uid='{self.__unique_id}', name='{self.__player_name}', score={self.__score})"
 
+    def __lt__(self, other):
+        return self.score < other.score
+
     @classmethod
     def hash(cls, key: str):
       """

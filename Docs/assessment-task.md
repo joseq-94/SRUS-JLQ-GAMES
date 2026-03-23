@@ -115,8 +115,10 @@ def test_players_can_be_compared_by_score(self):
     # or, event better
     self.assert<AppropriateComparisonMethod>(alice, bob)
 Run the test and confirm that your error resembles the previous error
+test_players_can_be_compared_by_score
+![img_2.png](img_2.png)
 
-INSERT ERROR OUTPUT HERE
+
 Implement the appropriate magic method in the Player class and ensure you pass this test
 It is likely (indeed desirable) that you still won't pass the test_sort_players test
 Commit your changes

@@ -28,5 +28,12 @@ class TestPlayer(unittest.TestCase):
 
         self.assertListEqual(sorted_players, manually_sorted_players)
 
+    def test_players_can_be_compared_by_score(self):
+        # note: ensure initialization code is valid for **your** implementation
+        alice = Player( "01", "Alice", 10)
+        bob = Player( "02","Bob", 5)
+        # Add the appropriate expression to the following assert test
+        self.assertTrue(bob < alice)
+
 if __name__ == '__main__':
     unittest.main()
