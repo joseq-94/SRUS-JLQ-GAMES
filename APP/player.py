@@ -1,3 +1,4 @@
+import random
 from _ast import Raise
 
 
@@ -44,15 +45,18 @@ class Player:
         """
         if len(arr) <= 1:
             return arr
-        pivot = arr[0]
+        pivot = random.choice(arr)
         left = []
+        middle = []
         right = []
-        for x in arr[1:]:
+        for x in arr:
             if x > pivot:
                 left.append(x)
+            elif x == pivot:
+                middle.append(x)
             else:
                 right.append(x)
-        return cls.sort_players(left) + [pivot] + cls.sort_players(right)
+        return cls.sort_players(left) + middle + cls.sort_players(right)
 
 
     @classmethod

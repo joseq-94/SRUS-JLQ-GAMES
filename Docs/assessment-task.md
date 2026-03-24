@@ -270,16 +270,41 @@ Provide a reason why this test failed (if you got a recursion errors, you need t
 
 If your implementation did not fail, you must nevertheless explain why the senior developers algorithm has worse space complexity for presorted values.
 
-According to I could see in the test, the algorithm fails because it always selects the first 
-element as the pivot. when the list is already sorted, this pivot choice produces the 
-worst-case partition. so only one list contains all the remaining elements and the other is 
+According to I could see in the test and this article:
+https://www.geeksforgeeks.org/dsa/when-does-the-worst-case-of-quicksort-occur/
+
+The algorithm fails because it always selects the first element as the pivot. when the list 
+is already sorted, this pivot choice produces the worst-case partition. so only one list contains all the remaining elements and the other is 
 empty. As a result of this, the algorithm need to call 1000 times only for one element. this 
 causes the recursion depth to grow linearly and create a RecursionError.
 
 Propose a fix to your sorting algorithm that fixes this issue.
 
-# YOUR FIX HERE
+    @classmethod
+    def sort_players(cls, arr):
+
+        if len(arr) <= 1:
+            return arr
+        pivot = random.choice(arr)
+        left = []
+        middle = []
+        right = []
+        for x in arr:
+            if x > pivot:
+                left.append(x)
+            elif x == pivot:
+                middle.append(x)
+            else:
+                right.append(x)
+        return cls.sort_players(left) + middle + cls.sort_players(right)
+
+
+![img_8.png](img_8.png)
+
 # Highlight what the fix was
+the fix was changing the pivot selection to random.choice and adding a proper middle list to 
+handle element equal to the pivot. this ensured the list was partitioned correctly.
+
 5.3.5. Success criteria
  Test case added to test_player.py
  Test case passes only when changes above are added
