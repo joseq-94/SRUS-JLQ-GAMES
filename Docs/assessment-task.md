@@ -314,10 +314,9 @@ handle element equal to the pivot. this ensured the list was partitioned correct
 6. Task: Authenticity of in class work
 Complete the following snippet before you submit:
 
-I, <name and student number>, completed this work in class <room number>, on <date>, under the supervision of <assessor's name>.
-Or (if not completed in class):
-
-I, <name and student number>, completed this work outside of the scheduled hours. I emailed <assessors name>, on <date>, along with my documented reason for non-attendance, and have scheduled a time to meet to discuss my work.
+I, Jose Luis Quintero Ochoa 20149097, completed this work outside of the scheduled hours. on 
+23/03/2026 and 24/03/2026, along with my documented reason for meetings of innovation 
+project, and have scheduled a time to meet to discuss my work.
 
 I understand that until I meet my assessor to confirm that this work is a valid and true representation of my abilities to write and debug a sorting algorithm in Python, this submission cannot be considered complete.
 
