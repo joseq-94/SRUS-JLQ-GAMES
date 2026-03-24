@@ -64,6 +64,15 @@ class TestPlayer(unittest.TestCase):
 
         self.assertListEqual(sorted_players, sorted_builtin_function)
 
+    def test_sort_1000_ordered_players(self):
+        players=[Player(f"{i:03}", f"Player {i}", score = i) for i in range(1, 1001)]
+
+        sorted_players = Player.sort_players(players)
+        sorted_builtin_function = sorted(players, key=lambda player: player.score, reverse=True)
+
+        self.assertListEqual(sorted_players, sorted_builtin_function)
+
+
 
 
 

@@ -263,13 +263,18 @@ Create a test case that tries to sort 1000 players that are already sorted.
 
 If you get a failure, include the failure below:
 
-YOUR FAILURE HERE
+![img_7.png](img_7.png)
+
 5.3.4.1 Question: Why does the algorithm fail on presorted values?
 Provide a reason why this test failed (if you got a recursion errors, you need to explain why that happened with a sorted list, but not an unsorted list).
 
 If your implementation did not fail, you must nevertheless explain why the senior developers algorithm has worse space complexity for presorted values.
 
-Answer here
+According to I could see in the test, the algorithm fails because it always selects the first 
+element as the pivot. when the list is already sorted, this pivot choice produces the 
+worst-case partition. so only one list contains all the remaining elements and the other is 
+empty. As a result of this, the algorithm need to call 1000 times only for one element. this 
+causes the recursion depth to grow linearly and create a RecursionError.
 
 Propose a fix to your sorting algorithm that fixes this issue.
 
