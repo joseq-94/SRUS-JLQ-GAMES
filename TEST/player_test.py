@@ -1,4 +1,5 @@
 import unittest
+import random
 from APP.player import Player
 
 
@@ -51,6 +52,18 @@ class TestPlayer(unittest.TestCase):
                                    Player('04', "Jose", 1),
                                    ]
         self.assertListEqual(sorted_players, manually_sorted_players)
+
+    def test_sort_1000_players(self):
+        players = [Player(f"{i:03}",f"Player {i}", score= random.randint(0, 1000)) for i in
+                   range(1000)]
+
+        sorted_players = Player.sort_players(players)
+
+        sorted_builtin_function = sorted(players, key=lambda player: player.score, reverse=True)
+
+
+        self.assertListEqual(sorted_players, sorted_builtin_function)
+
 
 
 

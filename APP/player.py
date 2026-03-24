@@ -37,6 +37,11 @@ class Player:
 
     @classmethod
     def sort_players(cls, arr):
+        """
+        Sorted the players list in descending order.
+        :param arr:
+        :return:
+        """
         if len(arr) <= 1:
             return arr
         pivot = arr[0]

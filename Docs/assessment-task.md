@@ -237,7 +237,19 @@ Using the code above as a starting point, create a test case to test your custom
 
 Include your test case below:
 
-# YOUR TEST CASE HERE
+    def test_sort_1000_players(self):
+        players = [Player(f"{i:03}",f"Player {i}", score= random.randint(0, 1000)) for i in
+                   range(1000)]
+
+        sorted_players = Player.sort_players(players)
+
+        sorted_builtin_function = sorted(players, key=lambda player: player.score, reverse=True)
+
+
+        self.assertListEqual(sorted_players, sorted_builtin_function)
+
+![img_6.png](img_6.png)
+
 5.3.2. Success criteria
  Test case added to test_player.py
  Test case sorts 1000 players correctly when compared to sorted function
