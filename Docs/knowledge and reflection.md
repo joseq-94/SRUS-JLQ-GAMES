@@ -92,29 +92,44 @@ cryptographic design and its only disadvantage is lower efficiency, since the ha
 
 3. List the three most important attributes (arranged from most to least) in the context of a hash map? Justify your answer.
 
-> Your answer here
+> for me, the three most important attribute of a hash function are uniformity because a 
+> hash map relies on an even distribution of keys across the tables, determinism because the 
+> same key must always map to the same index, and efficiency because the hash function are 
+> executed on every insertion, lookup and deletion.
 
 4. Which of the above hash functions would you choose to implement the requirements of the task? Why?
 
-> Your answer here
+> I choose the pearson hash for this task because it has a strong balance between the 
+> attributes, this function can create more distribution and reduce the collisions
 
 5. In your own words, explain each line in the pearson hash function above in terms of the criteria you listed in question 2.
 
-> Your answer here
+> the function is using a loop to iterate through each character and get numbers from UID and 
+> then mapping the result through different tables. this contributes to uniformity, 
+> determinism and efficiency
 
 6. Write pseudocode of how you would store Players in PlayerLists in a hash map.
 
-> Your answer here
+> function insert player
+> key = player.uid
+> index = hash_function(key)
+> self.hash_table[index].append(player)
+> increase size +1
 
 ## Reflection
 
 1. What was the most challenging aspect of this task?
 
-> Your answer here
+> The most challenging aspect was implementing the unittest for the playlist deletion logic. 
+> the list occasionally raised errors because the delete_key method to access prev on a none 
+> node. this happens when the head is deleted or the list is empty. so I use a conditional 
+> logic to correctly handle.
 
 2. If you didn't have to use a PlayerList, how would you have changed them implementation of the hash map and why?
 
-> Your answer here
+> if the number of player were small, I would replace the playerlist with a simple python list 
+> because I do not need to use the pointer-management complexity of a doubly linked list and 
+> avoid possible bugs.
 
 ## Reference
 
