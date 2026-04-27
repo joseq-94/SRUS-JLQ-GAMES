@@ -2,7 +2,7 @@ import player
 
 
 class PlayerBNode:
-    def __init__(self):
+    def __init__(self, player):
         self._Player = player
         self.left = None
         self.right = None
