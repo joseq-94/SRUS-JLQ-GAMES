@@ -53,3 +53,32 @@ class PlayerBST:
         if name < current_node.player.name:
             return self._search_recursive(current_node.left, name)
         return self._search_recursive(current_node.right, name)
+
+
+    def sorted_players(self):
+        list = []
+        self._search_LNR(self._root, list)
+        return list
+
+    def _search_LNR(self, node, list):
+        if node is None:
+            return
+        self._search_LNR(node.left, list)
+        list.append(node.player)
+        self._search_LNR(node.right, list)
+
+    def build_bst(self, players):
+        if not players:
+            return None
+
+        mid = len(players) // 2
+        root = PlayerBNode(players[mid])
+
+        root.left = self.build_bst(players[:mid])
+        root.right = self.build_bst(players[mid+1:])
+
+        return root
+
+    def balance_bts(self):
+        sorted_player =  self.sorted_players()
+        self._root = self.build_bst(sorted_player)
