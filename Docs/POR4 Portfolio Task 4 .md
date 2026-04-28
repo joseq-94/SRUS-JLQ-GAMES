@@ -30,9 +30,22 @@ the left and right sides. This avoids one subtree growing only in one direction.
 This balance helps the search, insert, and delete operations run faster and more efficiently.
 
 
+# Step 8
+
+In the worst case, it could take at most log₂(n) steps to find an item in a balanced BST, 
+because each comparison divides the search space in half.
 
 
+resources:
+GeeksforGeeks. (n.d.). Introduction to Binary Search Tree (BST).  
+Retrieved from https://www.geeksforgeeks.org/dsa/introduction-to-binary-search-tree/
 
+GeeksforGeeks. (n.d.). Height and Depth of a Node in a Binary Tree.  
+Retrieved from https://www.geeksforgeeks.org/dsa/height-and-depth-of-a-node-in-a-binary-tree/
 
-https://www.geeksforgeeks.org/dsa/introduction-to-binary-search-tree/
-https://www.geeksforgeeks.org/dsa/height-and-depth-of-a-node-in-a-binary-tree/
+GeeksforGeeks. (n.d.). Tree Traversals: Inorder, Preorder and Postorder.  
+Retrieved from https://www.geeksforgeeks.org/dsa/tree-traversals-inorder-preorder-and-postorder/
+
+GeeksforGeeks. (n.d.). Introduction to Searching Algorithms.  
+Retrieved from https://www.geeksforgeeks.org/dsa/introduction-to-searching-algorithms-2/
+
