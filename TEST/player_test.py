@@ -5,11 +5,11 @@ from APP.player import Player
 
 class TestPlayer(unittest.TestCase):
     def test_uid(self):
-        player = Player("1001", "Jose")
+        player = Player("1001", "Jose", 10)
         self.assertEqual(player.uid, "1001")
 
     def test_name(self):
-        player = Player("1001", "Jose")
+        player = Player("1001", "Jose",10)
         self.assertEqual(player.name, "Jose")
 
     def test_sort_players(self):
