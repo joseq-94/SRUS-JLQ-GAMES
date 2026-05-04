@@ -27,14 +27,14 @@ class HashTable:
         """
         return hash(key) % self.__size
 
-    def put(self, key, name):
+    def put(self, key, name, score):
         """
         Insert a new player into the hash table using separate chaining
         :param key:
         :param name:
         """
         index = Player.hash(key) % self.__table_size
-        player = Player(key, name)
+        player = Player(key, name, score)
 
         #insert data at the end of the player list
         self.__hash_table[index].insert_tail(player)
